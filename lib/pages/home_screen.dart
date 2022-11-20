@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -58,7 +60,9 @@ class HomeScreen extends StatelessWidget {
                   MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
             ),
             onPressed: () {
-              // Step 8
+              passwordController.text.toString() == ("12345")
+                  ? GoRouter.of(context).push('/signin')
+                  : null;
             },
             child: const Padding(
               padding: EdgeInsets.all(8.0),
