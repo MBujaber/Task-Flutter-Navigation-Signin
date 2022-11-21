@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class SignedIn extends StatelessWidget {
   // Step 5
-  const SignedIn({
+  String name;
+  SignedIn({
+    required this.name,
     Key? key,
   }) : super(key: key);
   // Step 6
@@ -16,9 +19,9 @@ class SignedIn extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             // Step 9
-            Text("Welcome username"),
+            Text("Welcome ${name}"),
             Icon(
               Icons.check_circle,
               color: Colors.green,

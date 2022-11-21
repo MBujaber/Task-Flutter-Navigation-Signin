@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,6 +5,8 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  String name = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,8 +60,9 @@ class HomeScreen extends StatelessWidget {
                   MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
             ),
             onPressed: () {
+              name = usernameController.text.toString();
               passwordController.text.toString() == ("12345")
-                  ? GoRouter.of(context).push('/signin')
+                  ? GoRouter.of(context).go('/signin', extra: name)
                   : null;
             },
             child: const Padding(

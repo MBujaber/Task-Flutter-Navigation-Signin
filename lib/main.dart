@@ -16,7 +16,7 @@ final router = GoRouter(routes: [
   ),
   GoRoute(
     path: "/signin",
-    builder: (((context, state) => SignedIn())),
+    builder: (((context, state) => SignedIn(name: state.extra as String))),
   ),
 ]);
 
